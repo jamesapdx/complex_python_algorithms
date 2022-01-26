@@ -1,5 +1,5 @@
 # fun_python
-Fun Python one-liners and other items
+Fun Python one-liners and other items that I created from scratch.
 
 # Screenshots
 
