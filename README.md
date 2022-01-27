@@ -1,5 +1,6 @@
 # complex_python_algorithms
-Complex Python one-liners that I created from scratch utilizing complex algorithms and math.
+Python one-liners that I created from scratch utilizing complex algorithms and math.
+Why just one line? The fun is in the challenge.
 
 # Description
 ### [digital_world_screensaver.py](https://github.com/jamesapdx/fun_python/blob/master/digital_world_screensaver.py)
