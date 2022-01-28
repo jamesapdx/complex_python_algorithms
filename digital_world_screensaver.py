@@ -18,7 +18,7 @@ sys.exit()
 
 import datetime as d,shutil, time, sys, random as r
 
-sys.tracebacklimit=0                         # don't display all the traceback errors with a keyboard interrupt
+sys.tracebacklimit=0                         # don't display all the traceback junk with a keyboard interrupt
 v=lambda k,v:globals().__setitem__(k,v)      # use this lambda to create/assign a variable without using x=3 notation, because we can't use x=3 inside a lambda
                                              # k = variable name, v = value to assign
 v('c',shutil.get_terminal_size())            # assign the terminal size to the variable 'c', c = [width, height]
@@ -32,14 +32,16 @@ l=lambda :(
            r.seed(t.hour) or                 # make a random.seed based on hour, this causes the seed and random int to be the same for the whole hour
            v('a',r.randint(1,10**c[0])) or   # generate a really long integer with same number of digits as the screen width. each digit will determine what char to print in that column
            r.seed() or                       # reset the seed so that we can randomize falling chars
-           print(''.join(                    # create a list of spaces and falling chars, then use join to convert to a string
-                '    '[:int(x)%3] + (' '[:t.minute%2]+chr(r.randint(35,91))+' ')[min(1,int(t.second/((int(x)+1)*6)))]
-#               ^----^^---------^   ^------------------------------------------^^-----------------------------------^
-#               either grab a space or a random char, for a reducing effect: spaced and weighted per minute, second, and the individual digit from the really long int 'a'
-                for x in str(a)              # loop through the really long random int 'a', the step above generates spacing and chars based on the digit and time
-                        )[:c[0]-1]           # slice of the total line for just the screen width
-           ) or
+           print(
+                 ''.join(                    # create a list of spaces and falling chars, then use join to convert to a string
+                 '    '[:int(x)%3] + (' '[:t.minute%2]+chr(r.randint(35,91))+' ')[min(1,int(t.second/((int(x)+1)*6)))]
+#                ^----^^---------^   ^------------------------------------------^^-----------------------------------^
+#                add space padding and possibly a random char. for a reducing effect: spacing and char is weighted per minute, second, and a column/digit from the really long int 'a'
+                 for x in str(a)             # loop through the really long random int 'a', the step above generates spacing and chars based on the digit and time
+                         )[:c[0]-1]          # slice of the total line for just the screen width
+                 ) or
           time.sleep(1) or                   # pause per iteration
-          l())                               # make recursive to keep looping
+          l()                                # make recursive to keep looping
+          )
 
 l()                                          # start our recursive lambda
