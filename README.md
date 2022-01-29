@@ -8,7 +8,7 @@ Why just one line? The fun is in the challenge.
 [![live](https://github.com/jamesapdx/fun_python/raw/master/screenshots/thumbnails/Screenshot_digital_world_th.png)](https://github.com/jamesapdx/fun_python/raw/master/screenshots/Screenshot_digital_world.png)
 
 With a not so simple ***single line*** python command, run a falling characters screensaver in the terminal. Best viewed with
-green text on a black background. A detailed explantion of the code is in the script.
+green text on a black background. A detailed explantion of the code is in the [script file](https://github.com/jamesapdx/complex_python_algorithms/blob/master/digital_world_screensaver.py).
 
 Either run the python script or copy, paste, and run this bash command:
 ```
@@ -19,7 +19,7 @@ python -c "import datetime as d,shutil,time,sys,random as r;sys.tracebacklimit=0
 
 [![live](https://github.com/jamesapdx/fun_python/raw/master/screenshots/thumbnails/Screenshot_starry_night_th.png)](https://github.com/jamesapdx/fun_python/raw/master/screenshots/Screenshot_starry_night.png)
 
-This ***single line*** python command will run an elegant starry night screensaver in the terminal.
+This ***single line*** python command will run an elegant starry night screensaver in the terminal. A detailed explantion of the code is in the [script file](https://github.com/jamesapdx/complex_python_algorithms/blob/master/starry_nights_screensaver.py).
 
 Either run the python script or copy, paste, and run this bash command:
 ```
