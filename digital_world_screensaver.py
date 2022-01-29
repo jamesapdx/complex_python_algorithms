@@ -13,8 +13,7 @@ or copy and paste this one-liner to the linux command line:
 python -c "import datetime as d,shutil,time,sys,random as r;sys.tracebacklimit=0;v=lambda k,v:globals().__setitem__(k,v);v('c',shutil.get_terminal_size());print('\n'*c[1]);l=lambda :v('t',d.datetime.now()) or r.seed(t.hour) or v('a',r.randint(1,10**c[0])) or r.seed() or print(''.join('    '[:int(x)%3]+(' '[:t.minute%2]+chr(r.randint(35,91))+' ')[min(1,int(t.second/((int(x)+1)*6)))] for x in str(a))[:c[0]-1]) or time.sleep(1) or l();l()"
 """
 
-# below is the one-liner streched out and explaned. this is fully functional, to use just comment the one-liner above and remove sys.exit()
-sys.exit()
+# below is the one-liner streched out and explaned. this is fully functional, to use just comment the one-liner above
 
 import datetime as d,shutil, time, sys, random as r
 
@@ -34,10 +33,10 @@ l=lambda :(
            r.seed() or                       # reset the seed so that we can randomize falling chars
            print(
                  ''.join(                    # create a list of spaces and falling chars, then use join to convert to a string
-                 '    '[:int(x)%3] + (' '[:t.minute%2]+chr(r.randint(35,91))+' ')[min(1,int(t.second/((int(x)+1)*6)))]
-#                ^----^^---------^   ^------------------------------------------^^-----------------------------------^
-#                add space padding and possibly a random char. for a reducing effect: spacing and char is weighted per minute, second, and a column/digit from the really long int 'a'
-                 for x in str(a)             # loop through the really long random int 'a', the step above generates spacing and chars based on the digit and time
+                         '    '[:int(x)%3] + (' '[:t.minute%2]+chr(r.randint(35,91))+' ')[min(1,int(t.second/((int(x)+1)*6)))]
+#                        ^----^^---------^   ^------------------------------------------^^-----------------------------------^
+#                        add space padding and possibly a random char. for a reducing effect: spacing and char is weighted per minute, second, and a column/digit from the really long int 'a'
+                         for x in str(a)             # loop through the really long random int 'a', the step above generates spacing and chars based on the digit and time
                          )[:c[0]-1]          # slice of the total line for just the screen width
                  ) or
           time.sleep(1) or                   # pause per iteration

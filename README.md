@@ -8,7 +8,7 @@ Why just one line? The fun is in the challenge.
 [![live](https://github.com/jamesapdx/fun_python/raw/master/screenshots/thumbnails/Screenshot_digital_world_th.png)](https://github.com/jamesapdx/fun_python/raw/master/screenshots/Screenshot_digital_world.png)
 
 With a not so simple ***single line*** python command, run a falling characters screensaver in the terminal. Best viewed with
-green text on a black background.
+green text on a black background. A detailed explantion of the code is in the script.
 
 Either run the python script or copy, paste, and run this bash command:
 ```
